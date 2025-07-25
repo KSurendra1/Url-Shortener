@@ -72,39 +72,19 @@ curl http://localhost:5000/api/stats/abc123
 ```
 ###  API usage 
 ```bash
-# ✅ 1. Health Check
-curl http://127.0.0.1:5000/api/health
-
-# Expected Response:
-# {
-#   "status": "healthy",
-#   "service": "URL Shortener API"
-# }
-
-# 🔗 2. Shorten a URL
-curl -X POST http://127.0.0.1:5000/api/shorten \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://www.linkedin.com/in/karthikeyan-v-09905a286/"}'
-
-# Example Response:
-# {
-#   "short_code": "uPb5Dt",
-#   "short_url": "http://localhost:5000/uPb5Dt"
-# }
-
-# 🚀 3. Redirect Using Short URL
+Short URL
 curl -L http://localhost:5000/uPb5Dt
 
 # This follows the redirect to:
 # https://www.linkedin.com/in/karthikeyan-v-09905a286/
 
-# 📊 4. Get URL Analytics
+# Get URL Analytics
 curl http://127.0.0.1:5000/api/stats/uPb5Dt
 
 # Example Response:
 # {
 #   "url": "https://www.linkedin.com/in/karthikeyan-v-09905a286/",
-#   "clicks": 3,
+#   "clicks": 1,
 #   "created_at": "2025-07-24T14:30:12"
 # }
 ```
